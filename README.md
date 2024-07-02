@@ -1,0 +1,1 @@
+this is the replicate Project of Binding the model in one views web project . In here Using 3 tier architecture ASP.NETCOreMVC only . Already built database of previous project is used for this project . it means database first approach
