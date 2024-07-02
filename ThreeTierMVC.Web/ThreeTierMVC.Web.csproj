@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Business.Layer\Business.Layer.csproj" />
     <ProjectReference Include="..\Data.Layer\Data.Layer.csproj" />
-    <ProjectReference Include="..\Global.Entity\Global.Entities.csproj" />
   </ItemGroup>
 
 </Project>

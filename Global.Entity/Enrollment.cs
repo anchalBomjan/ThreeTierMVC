@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace Global.Entities
 {
-    public class Student
+    public  class Enrollment
     {
         [Key]
+        public int EnrollmentID { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string StudentID { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
+        public int CourseID { get; set; }
 
         [Required]
-        [EmailAddress]
-        [StringLength(100)]
-        public string Email { get; set; }
+        public DateTime EnrollmentDate { get; set; }
 
-        public ICollection<Enrollment> Enrollments { get; set; }
+        // Navigation properties for related data
+        public Student Student { get; set; }
+        public Course Course { get; set; }
     }
 }

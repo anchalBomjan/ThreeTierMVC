@@ -1,17 +1,21 @@
+using Business.Layer.Services;
 using Data.Layer.Data;
 using Data.Layer.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Register repositories
-builder.Services.AddScoped<IStudentRepository, StudentRepository>(); // Assuming StudentRepository is the implementation
+//This services enable to  route without authentication and authorization 
+builder.Services.AddControllersWithViews();
 
-// Register services
-builder.Services.AddScoped<IStudentService,StudentServices>();
+// this services helps to inject Dbcontext in our  web application
+builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 
 var app = builder.Build();
