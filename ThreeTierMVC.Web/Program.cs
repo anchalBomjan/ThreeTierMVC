@@ -18,6 +18,11 @@ builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder. Services.AddScoped<IStudentRepository, StudentRepository>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
