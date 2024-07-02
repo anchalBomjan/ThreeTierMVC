@@ -1,5 +1,6 @@
 ﻿using Global.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,6 @@ namespace Business.Layer.Services
         Task AddStudentAsync(StudentViewModel viewModel);
         Task UpdateStudentAsync(string id, StudentViewModel viewModel);
         Task DeleteStudentAsync(string id);
-
+       
     }
 }
